@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Of People</title>
+</head>
+<body>
+    <h2>All of Users List</h2>
+    <ul>
+        <li th:each="person : ${people}">
+            <span th:text="${person.name}">[name]</span>
+            |
+            <a th:href="@{'/delete/' + ${person.id}}">Delete</a>
+            <a th:href="@{'/edit/' + ${person.id}}">edit</a>
+        </li>
+    </ul>
+    <br>
+    <a href="http://localhost:8080">Back</a><br>
+    <a href="/search">search</a>
+</body>
+</html>

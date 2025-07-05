@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search User</title>
+</head>
+<body>
+    <h2>Search User</h2>
+    <form action="/search" method="post">
+        <label>Enter Name:</label>
+        <input type="text" name="keyword" th:value="${keyword}">
+        <button type="submit">Search</button>
+    </form>
+    <div th:if="${result}">
+        <h3>Result:</h3>
+        <ul>
+            <li th:each="p : ${result}" th:text="${p.name}"></li>
+        </ul>
+    </div>
+<a href="/list">Back To List</a>
+</body>
+</html>

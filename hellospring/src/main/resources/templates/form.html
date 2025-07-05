@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hi form</title>
+</head>
+<body>
+
+<form action="/hello" method="post" th:object="${person}">
+    <label>your name:</label>
+    <input type="text" th:field="*{name}" />
+    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>
