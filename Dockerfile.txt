@@ -1,0 +1,15 @@
+# Base image با Python و FFmpeg
+FROM python:3.11-slim
+
+# نصب ابزارهای مورد نیاز
+RUN apt-get update && apt-get install -y ffmpeg git && rm -rf /var/lib/apt/lists/*
+
+# نصب Whisper و Torch
+RUN pip install --upgrade pip
+RUN pip install git+https://github.com/openai/whisper.git torch
+
+# پوشه کاری
+WORKDIR /app
+
+# فرمان پیش‌فرض
+CMD ["bash"]
